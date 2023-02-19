@@ -12,31 +12,31 @@
     &-header {
       margin: 0px;
       padding: 0px;
-      width: 332px;
+      width: 532px;
       height: 204px;
 
       &__title {
         margin-bottom: 18px;
-        width: 264px;
+        width: 464px;
         height: 68px;
         font-style: normal;
         font-weight: 500;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 34px;
         color: #71b46f;
-    
         text-transform: capitalize;
       }
 
       &__description {
         margin-bottom: 27px;
-        width: 332px;
+        width: 432px;
         height: 57px;
         font-style: normal;
         font-weight: 300;
         font-size: 16px;
         line-height: 19px;
         color: #404041;
+          margin-top: 50px;
           display: flex;
           flex-direction: column;
           margin: auto;
@@ -109,7 +109,7 @@
     height: 270px;
     
     &__title {
-      width: 401px;
+      width: 1001px;
       height: 34px;
       margin-left: 72px;
       font-style: normal;
@@ -122,19 +122,20 @@
       justify-content: center;
       text-align: center;
       margin: auto;
-      margin-top: 40px;
+      margin-top: 80px;
       padding: 10px;
       text-transform: uppercase;
+      margin-bottom: 60px;
     }
 
     &__description {
       margin-left: 72px;
-      width: 504px;
+      width: 1001px;
       height: 57px;
       font-style: normal;
       font-weight: 300;
       font-size: 20px;
-      line-height: 19px;
+      line-height: 29px;
       color: #404041;
       display: flex;
       text-align: center;

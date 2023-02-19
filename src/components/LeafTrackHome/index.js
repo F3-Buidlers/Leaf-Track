@@ -9,11 +9,10 @@ export function LeafTrackHome() {
         <div className="home-container">
           <div className="home-container-header">
             <p className="home-container-header__title">
-              fight deforestation, one NFT at a time.
+              "Unleash your inner eco-warrior and combat deforestation with every NFT you own."
             </p>
             <p className="home-container-header__description">
-              our dynamic NFTs are constantly changing, based on the information
-              captured by our satellite monitoring system.
+              "Experience the living and breathing world of NFTs, as our dynamic creations evolve in real-time, powered by data collected from our state-of-the-art satellite monitoring system."
             </p>
             {/* <div className="home-container-header__browser">
               <p>BROWSER NOW</p>
@@ -36,11 +35,9 @@ export function LeafTrackHome() {
           </p>
         </div>
         <div className="home-subscribe">
-          <p className="home-subscribe__title">subscribe to a greener world.</p>
+          <p className="home-subscribe__title">Join the movement towards a sustainable future by enrolling for a subscription to a world that's healthier, cleaner, and greener."</p>
           <p className="home-subscribe__description">
-            our monitoring system provides crucial information on the vegetation
-            layer of your reserve, acting as an early warning system that helps
-            you make well-informed decisions as needed.
+            "Empower yourself with vital knowledge about your reserve's vegetation layer through our cutting-edge monitoring system, acting as your very own environmental sentry, providing early warnings and enabling you to make informed decisions with confidence."
           </p>
           {/* <div className="home-subscribe__browser">
             <p>LEAR MORE</p>
