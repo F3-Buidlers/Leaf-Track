@@ -21,5 +21,15 @@ By leveraging this technology, LeafTrack acts as an early warning system for any
 
 <b>ENS</b> (Ethereum Name Service) is used in the LeafTrack project for decentralized naming of wallets, websites, and other resources, which allows for easier access and better organization of the system.
 
+<h4>Prerequisites:</h4> Node (v16 LTS) and Git
 
+Clone the repository:
+
+git clone https://github.com/F3-Buidlers/Leaf-Track.git
+Install dependencies:
+
+npm install
+Run the project:
+
+npm start
 
