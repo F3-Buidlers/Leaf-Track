@@ -15,7 +15,7 @@ export function LeafTrackSubscribe() {
   return (
     <div className='subscribe'>
       <LeafTrackBanner banner={banner}/>
-      <h1 className='subscribe__title'>Subscribe</h1>
+      <h1 className='subscribe__title'>Join the hands</h1>
       <p className='subscribe__description'>As the underlying technology develops, a growing pool of artists are selling verified, immutable works to art lovers and speculators, and the space as a whole is waking up to the power and potential of decentralized networks and currencies. With creators and collectors generating meaningful revenue through an entirely digital ecosystem, the tokenization of gifs, memes, and MP4s is emerging as the most exciting and relevant blockchain use case. From SuperRare to Josie to JOY, browse and trade NFTs from some of the world's top crypto artists on OpenSea.</p>
       <LeafTrackForm />
     </div>
