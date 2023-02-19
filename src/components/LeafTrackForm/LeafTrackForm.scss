@@ -1,21 +1,28 @@
 .form__container {
-  margin-left: 1rem;
-  margin-bottom: 2rem;
+  // margin-left: 1rem;
+  // margin-bottom: 2rem;
   width: 70%;
   display: flex;
   flex-direction: column;
   border: 1.5px solid #212121;
   border-radius: 6px;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+ 
 
   .form {
     margin: 30px 0;
     width: 100%;
     height: max-content;
 
+
     &__title {
       padding: 0px 1rem;
       margin: 0;
       font-size: 38px;
+      text-transform: capitalize;
     }
 
     &-form {
@@ -45,10 +52,11 @@
 
           p {
             max-width: max-content;
+            font-size: 25px;
 
           }
         }
-
+       
         &__upload {
           margin: 0;
           margin-bottom: 16px;
@@ -59,10 +67,26 @@
           align-items: center;
           justify-content: center;
 
+          input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            
+          }
+          #inputTag{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+          }
+
           button {
             cursor: pointer;
-            background: #808080;
-            border-radius: 150px;
+            border-radius: 100px;
+            background: linear-gradient(45deg, #03a9f4, #f441a5);
             font-style: normal;
             font-weight: 400;
             font-size: 14px;
@@ -98,6 +122,7 @@
 
           p {
             max-width: max-content;
+            font-size: 20px;
           }
         }
       }
@@ -109,21 +134,26 @@
 
         p {
           margin: 0px;
+          font-size: 16px;
         }
 
         input {
           outline: 2px solid transparent;
-          height: 1.5rem;
+          height: 3rem;
           border: 1px solid;
           border-radius: 0.375rem;
           width: 100%;
+          padding: 20px;
+          margin: 10px 10px 10px 0px;
         }
 
         textarea {
           min-width: 0px;
           outline: 2px solid transparent;
-          height: 3rem;
+          height: 20rem;
           border: 1px solid;
+          padding: 20px;
+          margin: 10px 10px 10px 0px;
           border-radius: 0.375rem;
         }
       }

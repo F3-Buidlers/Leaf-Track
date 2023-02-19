@@ -17,7 +17,7 @@ export function LeafTrackProtectedAreaDetails() {
   useEffect(() => {
     fetch("/file.html")
       .then((res) => res.text())
-      .then((text) => {setHtml(text)});
+      .then((text) => { setHtml(text) });
   }, []);
 
   const protectedArea = protectedAreasList.find(
@@ -44,22 +44,26 @@ export function LeafTrackProtectedAreaDetails() {
         <figure>
           <img src={protectedArea.imgbase64} alt="logo" />
         </figure>
-        <p className="details-container-project__item">
-          Latitud: {protectedArea.lat}
-        </p>
-        <p className="details-container-project__item">
-          Longitud: {protectedArea.min}
-        </p>
-        <p className="details-container-project__item">
-          Date: {protectedArea.timestamp}
-        </p>
+        <div >
+          <p className="details-container-project__item">
+            Latitud: {protectedArea.lat}
+          </p>
+          <p className="details-container-project__item">
+            Longitud: {protectedArea.min}
+          </p>
+          <p className="details-container-project__item">
+            Date: {protectedArea.timestamp}
+          </p>
+        </div>
       </div>
       <LeafTrackResumen protectedArea={protectedArea} />
       <LeafTrackProtectedAreaStatistics
         data={protectedArea.mean}
         labels={"NDVI"}
       />
-      {html && <iframe srcdoc={html}></iframe>}
+
+      {html && <iframe className="iframe" style={{height:"50vh",width:"50vw", display:"flex", textAlign:"center", justifyContent:"center"}} srcdoc={html}></iframe>}
     </div>
+
   );
 }

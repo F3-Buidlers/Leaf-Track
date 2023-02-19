@@ -46,18 +46,22 @@ export function LeafTrackForm() {
                   all submission rules to not lose your deposit.
                 </p>
               </div>
-              <span>
-                <input placeholder="Name" />
-              </span>
-              <span>
-                <input placeholder="Last Name" />
-              </span>
-              <span>
-                <input placeholder="Project Name" />
-              </span>
-              <span>
-                <textarea placeholder="Description of the project" />
-              </span>
+
+              <div >
+
+                <span >
+                  <input placeholder="Name" />
+                </span>
+                <span>
+                  <input placeholder="Last Name" />
+                </span>
+                <span>
+                  <input placeholder="Project Name" />
+                </span>
+                <span>
+                  <textarea placeholder="Description of the project" />
+                </span>
+              </div>
               <div className="form-form-box">
                 <div className="form-form-box__container">
                   <FontAwesomeIcon
@@ -82,13 +86,16 @@ export function LeafTrackForm() {
                       <p>{"(Max Size: 2 MB | *.jpg, *.jpeg, *.png)"}</p>
                     </div>
                   </div>
-                  <p style={{marginBottom: '1rem'}}>
+                  <p style={{ marginBottom: '1rem' }}>
                     People can try to notify you of problems in your submission
                     and save your deposit via your ethmail.cc. Make sure to
                     check it while submission is being processed.
                   </p>
                   <div className="form-form-box__upload">
-                    <button>Click here to browse file</button>{" "}
+                    <label htmlFor="inputTag" >
+                    <input id='inputTag' type="file" />
+                    </label>
+                    
                   </div>
                 </div>
               </span>

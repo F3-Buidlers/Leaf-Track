@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 src/blockchain/subgraph/colombian-dao-market/node_modules
-src/subgraph/node_modules
+src/ph/node_modules
 
 # testing
 /coverage

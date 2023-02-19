@@ -1,6 +1,6 @@
 import "./LeafTrackMonitoreo.scss";
 import React from "react";
-import banner from '../../asserts/images/skywood-banner-2.jpg'
+import banner from '../../asserts/images/forestnft.png'
 import protectedAreasList from '../../asserts/json/harcoredData.json'
 import { useAuth } from "../../hooks/useAuth";
 import { Navigate } from 'react-router-dom';
