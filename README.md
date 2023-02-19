@@ -13,13 +13,13 @@ By leveraging this technology, LeafTrack acts as an early warning system for any
 
 <b>Chainlink </b> is used to connect smart contracts with off-chain data and services. In the LeafTrack project, it ensures that the data from satellite images is securely and accurately transferred to the blockchain-based system.
 
-</b>Filecoin</b> is used in the LeafTrack project to save analyzed and compressed satellite images in an IPFS system. This ensures that the images are easily accessible, yet remain secure and decentralized.
+<b>Filecoin</b> is used in the LeafTrack project to save analyzed and compressed satellite images in an IPFS system. This ensures that the images are easily accessible, yet remain secure and decentralized.
 
-</b>OpenZeppelin</b> provides templates for deploying smart contracts for dynamic non-fungible tokens (NFTs). In the LeafTrack project, it helps in the creation and management of the NFTs for each satellite image, allowing them to be uniquely identified and traded.
+<b>OpenZeppelin</b> provides templates for deploying smart contracts for dynamic non-fungible tokens (NFTs). In the LeafTrack project, it helps in the creation and management of the NFTs for each satellite image, allowing them to be uniquely identified and traded.
 
-</b>Polygon</b> is used as a testnet for deploying the LeafTrack project. This allows for testing and fine-tuning of the system before deploying it on the main Ethereum network.
+<b>Polygon</b> is used as a testnet for deploying the LeafTrack project. This allows for testing and fine-tuning of the system before deploying it on the main Ethereum network.
 
-</b>ENS</b> (Ethereum Name Service) is used in the LeafTrack project for decentralized naming of wallets, websites, and other resources, which allows for easier access and better organization of the system.
+<b>ENS</b> (Ethereum Name Service) is used in the LeafTrack project for decentralized naming of wallets, websites, and other resources, which allows for easier access and better organization of the system.
 
 
 
