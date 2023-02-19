@@ -1,0 +1,30 @@
+.monitoreo {
+
+  &__title {
+    margin: 0;
+    margin-left: 56px;
+    margin-bottom: 18px;
+    width: 394px;
+    height: 34px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+    color: #71B46F;
+
+  }
+
+  &__description {
+    margin: 0px;
+    margin-left: 56px;
+    margin-bottom: 47px;
+    width: 593px;
+    height: 58px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #404041;
+    
+  }
+}

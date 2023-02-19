@@ -1,0 +1,22 @@
+.subscribe {
+  
+  &__title {
+    margin: 0;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    width: max-content;
+    font-size: 46px;
+    line-height: 22.5px;
+
+  }
+
+  &__description {
+    margin: 0;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    width: 92%;
+    font-size: 16px;
+    line-height: 22.5px;
+    
+  }
+}
