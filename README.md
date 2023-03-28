@@ -1,4 +1,4 @@
- [Leaf Track]([https://leaf-track.vercel.app])  
+ # [Leaf Track]([https://leaf-track.vercel.app])  
 
 LeafTrack is being developed at Scaling Ethereum 2023.
 
@@ -13,6 +13,12 @@ By leveraging this technology, LeafTrack acts as an early warning system for any
 <h3>Tech Stack: </h3>
 
 <b>The Graph </b> is used in the LeafTrack project to request information and save it in the blockchain-based system, ensuring immutability and transparency of the data.
+
+Link: <a href="https://thegraph.com/hosted-service/subgraph/pradeepvarma22/leaf-track
+">https://thegraph.com/hosted-service/subgraph/pradeepvarma22/leaf-track
+</a>
+
+<img src="./leaftrack-subgraph/images/leaf.png" />
 
 <b>Chainlink </b> is used to connect smart contracts with off-chain data and services. In the LeafTrack project, it ensures that the data from satellite images is securely and accurately transferred to the blockchain-based system.
 
@@ -36,10 +42,9 @@ Run the project:
 
 npm start
 
-
-<h6> Contract Addresses: </h6> <br>
+<h6> Contract Addresses: </h6>
 FVM Hyperspace Testnet Contract Address:0x512F7469BcC83089497506b5df64c6E246B39925 <br>
 Scroll:  0xb777774C9955b0EbfD84cF1769977ac87ED948De <br>
-Polygon  Testnet Contract Address : 0xD128B7AC652E2caF9514c70f5dc2f1Be8bD14A8a <br>
+Polygon  Testnet Contract Address : 0xb777774C9955b0EbfD84cF1769977ac87ED948De <br>
 Mantle Testnet Contract Address: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0 <br>
 
