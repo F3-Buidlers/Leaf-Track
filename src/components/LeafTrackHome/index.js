@@ -45,7 +45,7 @@ export function LeafTrackHome() {
         </div>
         <div className="home__vector"></div>
         <div className="home-built-tecnologies">
-          <p className="home-built__title">how we built it.</p>
+
         </div>
       </div>
     </>
