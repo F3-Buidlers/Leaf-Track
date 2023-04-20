@@ -74,3 +74,4 @@ export function handleTransfer(event: TransferEvent): void {
 
   entity.save()
 }
+//new subgraph generated
