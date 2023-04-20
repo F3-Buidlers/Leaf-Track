@@ -127,6 +127,7 @@
 			}
 		],
 		"name": "changeNumber",
+		"_comment1": "new subgraph added",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
