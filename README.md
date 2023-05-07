@@ -1,6 +1,6 @@
  # [Leaf Track]([https://leaf-track.vercel.app])  
 
-LeafTrack is being developed at Scaling Ethereum 2023.
+LeafTrack is being developed at COH.
 
 LeafTrack is a remote sensing service that utilizes free, high-resolution satellite images to monitor the vegetation layer of a given area, such as a nature reserve. The service provides detailed information about the vegetation, including its health, growth, and distribution, through the use of advanced algorithms and machine learning models.
 
