@@ -7,7 +7,12 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "src/blockchain/hardhat/contracts/MultiWordConsumerContract.sol";
 
-contract LeafTrackContract is ERC721, ERC721URIStorage, KeeperCompatibleInterface, MultiWordConsumerContract {
+contract LeafTrackContract is
+    ERC721,
+    ERC721URIStorage,
+    KeeperCompatibleInterface,
+    MultiWordConsumerContract
+{
     using Counters for Counters.Counter;
 
     Counters.Counter public tokenIdCounter;
@@ -21,29 +26,29 @@ contract LeafTrackContract is ERC721, ERC721URIStorage, KeeperCompatibleInterfac
 
     string[] IpfsUri = [
         // Guacharos
-    "https://oriojas.pythonanywhere.com/file_name/Guacharos_2018",
-    "https://oriojas.pythonanywhere.com/file_name/Guacharos_2019",
-    "https://oriojas.pythonanywhere.com/file_name/Guacharos_2020",
-    "https://oriojas.pythonanywhere.com/file_name/Guacharos_2021",
-    "https://oriojas.pythonanywhere.com/file_name/Guacharos_2022",  
-    //     // Tayrona
-    "https://oriojas.pythonanywhere.com/file_name/Tayrona_2018",
-    "https://oriojas.pythonanywhere.com/file_name/Tayrona_2019",
-    "https://oriojas.pythonanywhere.com/file_name/Tayrona_2020",
-    "https://oriojas.pythonanywhere.com/file_name/Tayrona_2021",
-    "https://oriojas.pythonanywhere.com/file_name/Tayrona_2022",
-    //     // Apaporis
-    "https://oriojas.pythonanywhere.com/file_name/Apaporis_2018",
-    "https://oriojas.pythonanywhere.com/file_name/Apaporis_2019",
-    "https://oriojas.pythonanywhere.com/file_name/Apaporis_2020",
-    "https://oriojas.pythonanywhere.com/file_name/Apaporis_2021",
-    "https://oriojas.pythonanywhere.com/file_name/Apaporis_2022",
-    //     // Biolumen
-    "https://oriojas.pythonanywhere.com/file_name/Biolumen_2018",
-    "https://oriojas.pythonanywhere.com/file_name/Biolumen_2019",
-    "https://oriojas.pythonanywhere.com/file_name/Biolumen_2020",
-    "https://oriojas.pythonanywhere.com/file_name/Biolumen_2021",
-    "https://oriojas.pythonanywhere.com/file_name/Biolumen_2022"
+        "https://oriojas.pythonanywhere.com/file_name/Guacharos_2018",
+        "https://oriojas.pythonanywhere.com/file_name/Guacharos_2019",
+        "https://oriojas.pythonanywhere.com/file_name/Guacharos_2020",
+        "https://oriojas.pythonanywhere.com/file_name/Guacharos_2021",
+        "https://oriojas.pythonanywhere.com/file_name/Guacharos_2022",
+        //     // Tayrona
+        "https://oriojas.pythonanywhere.com/file_name/Tayrona_2018",
+        "https://oriojas.pythonanywhere.com/file_name/Tayrona_2019",
+        "https://oriojas.pythonanywhere.com/file_name/Tayrona_2020",
+        "https://oriojas.pythonanywhere.com/file_name/Tayrona_2021",
+        "https://oriojas.pythonanywhere.com/file_name/Tayrona_2022",
+        //     // Apaporis
+        "https://oriojas.pythonanywhere.com/file_name/Apaporis_2018",
+        "https://oriojas.pythonanywhere.com/file_name/Apaporis_2019",
+        "https://oriojas.pythonanywhere.com/file_name/Apaporis_2020",
+        "https://oriojas.pythonanywhere.com/file_name/Apaporis_2021",
+        "https://oriojas.pythonanywhere.com/file_name/Apaporis_2022",
+        //     // Biolumen
+        "https://oriojas.pythonanywhere.com/file_name/Biolumen_2018",
+        "https://oriojas.pythonanywhere.com/file_name/Biolumen_2019",
+        "https://oriojas.pythonanywhere.com/file_name/Biolumen_2020",
+        "https://oriojas.pythonanywhere.com/file_name/Biolumen_2021",
+        "https://oriojas.pythonanywhere.com/file_name/Biolumen_2022"
     ];
 
     event NvdiRegistered(
@@ -62,7 +67,15 @@ contract LeafTrackContract is ERC721, ERC721URIStorage, KeeperCompatibleInterfac
         account = msg.sender;
     }
 
-    function checkUpkeep(bytes calldata /* checkData */) external view override returns (bool upkeepNeeded, bytes memory /* performData */) {
+    // Check if upkeep is needed (for Keeper network integration)
+    function checkUpkeep(
+        bytes calldata /* checkData */
+    )
+        external
+        view
+        override
+        returns (bool upkeepNeeded, bytes memory /* performData */)
+    {
         uint256 tokenId = tokenIdCounter.current() - 1;
         bool done;
         if (numberStage(tokenId) >= 12) {
@@ -71,6 +84,7 @@ contract LeafTrackContract is ERC721, ERC721URIStorage, KeeperCompatibleInterfac
         upkeepNeeded = !done && ((block.timestamp - lastTimeStamp) > interval);
     }
 
+    // Perform upkeep (for Keeper network integration)
     function performUpkeep(bytes calldata /* performData */) external override {
         if ((block.timestamp - lastTimeStamp) > interval) {
             lastTimeStamp = block.timestamp;
@@ -78,8 +92,12 @@ contract LeafTrackContract is ERC721, ERC721URIStorage, KeeperCompatibleInterfac
             changeNumber(tokenId);
         }
     }
-
-    function safeMint(address _to, string memory _name, uint _service) external payable onlyOwner {
+// Mint a new token and set its URI
+    function safeMint(
+        address _to,
+        string memory _name,
+        uint _service
+    ) external payable onlyOwner {
         require(msg.value >= _service, "The funds don't sufficient");
         payable(_to).transfer(msg.value);
         uint256 tokenId = tokenIdCounter.current();
@@ -88,7 +106,7 @@ contract LeafTrackContract is ERC721, ERC721URIStorage, KeeperCompatibleInterfac
         _safeMint(_to, tokenId);
         _setTokenURI(tokenId, IpfsUri[0]);
     }
-
+// Change the URI and request data
     function changeNumber(uint256 _tokenId) public {
         if (numberStage(_tokenId) >= 12) {
             return;
@@ -97,9 +115,8 @@ contract LeafTrackContract is ERC721, ERC721URIStorage, KeeperCompatibleInterfac
         string memory newUri = IpfsUri[newValue];
         _setTokenURI(_tokenId, newUri);
         requestMultipleParameters(newUri);
-       
     }
-
+    // Handle callback from Chainlink VRF (for MultiWordConsumerContract)
     function requestHook(
         bytes32 requestId,
         string memory _mean,
@@ -108,11 +125,20 @@ contract LeafTrackContract is ERC721, ERC721URIStorage, KeeperCompatibleInterfac
         string memory _min,
         string memory _uuid,
         string memory _id
-    ) override public{
-       emit NvdiRegistered(requestId, _mean, _std, _max, _min, _uuid, _id, parkName);
+    ) public override {
+        emit NvdiRegistered(
+            requestId,
+            _mean,
+            _std,
+            _max,
+            _min,
+            _uuid,
+            _id,
+            parkName
+        );
     }
 
-        // determine the stage of number
+    // determine the stage of number
     function numberStage(uint256 _tokenId) public view returns (uint256) {
         string memory _uri = tokenURI(_tokenId);
         // number I
@@ -164,18 +190,25 @@ contract LeafTrackContract is ERC721, ERC721URIStorage, KeeperCompatibleInterfac
     }
 
     // helper function to compare strings
-    function compareStrings(string memory a, string memory b) public pure returns (bool) {
+    function compareStrings(
+        string memory a,
+        string memory b
+    ) public pure returns (bool) {
         return (keccak256(abi.encodePacked((a))) ==
             keccak256(abi.encodePacked((b))));
     }
 
-    // The following functions is an override required by Solidity.
-    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+    // Override the _burn function as required by Solidity
+    function _burn(
+        uint256 tokenId
+    ) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
     }
 
-    // The following functions is an override required by Solidity.
-    function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns (string memory) {
+    // Override the tokenURI function as required by Solidity
+    function tokenURI(
+        uint256 tokenId
+    ) public view override(ERC721, ERC721URIStorage) returns (string memory) {
         return super.tokenURI(tokenId);
     }
 }
