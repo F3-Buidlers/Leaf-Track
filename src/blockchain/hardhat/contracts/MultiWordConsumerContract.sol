@@ -1,8 +1,8 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-import '@chainlink/contracts/src/v0.8/ChainlinkClient.sol';
-import '@chainlink/contracts/src/v0.8/ConfirmedOwner.sol';
+import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
+import "@chainlink/contracts/src/v0.8/ConfirmedOwner.sol";
 
 /**
  * Request testnet LINK and ETH here: https://faucets.chain.link/
@@ -35,7 +35,7 @@ contract MultiWordConsumerContract is ChainlinkClient, ConfirmedOwner {
     constructor() ConfirmedOwner(msg.sender) {
         setChainlinkToken(0x326C977E6efc84E512bB9C30f76E30c160eD06FB);
         setChainlinkOracle(0xB00282B9dBff5b6e07dDDFe5540caebf0d8C6Ff7);
-        jobId = '0828d8dae7994ccd83da5dc4c0261e36';
+        jobId = "0828d8dae7994ccd83da5dc4c0261e36";
         fee = (1 * LINK_DIVISIBILITY) / 10; // 0,1 * 10**18 (Varies by network and job)
     }
 
@@ -48,13 +48,13 @@ contract MultiWordConsumerContract is ChainlinkClient, ConfirmedOwner {
             address(this),
             this.fulfillMultipleParameters.selector
         );
-        req.add('get', _url);
-        req.add('mean', 'ndvi,mean');
-        req.add('std', 'ndvi,std');
-        req.add('max', 'ndvi,max');
-        req.add('min', 'ndvi,min');
-        req.add('uuid_p', 'ndvi,uuid_p');
-        req.add('id_p', 'ndvi,id_p');
+        req.add("get", _url);
+        req.add("mean", "ndvi,mean");
+        req.add("std", "ndvi,std");
+        req.add("max", "ndvi,max");
+        req.add("min", "ndvi,min");
+        req.add("uuid_p", "ndvi,uuid_p");
+        req.add("id_p", "ndvi,id_p");
         sendChainlinkRequest(req, fee); // MWR API.
     }
 
@@ -71,15 +71,7 @@ contract MultiWordConsumerContract is ChainlinkClient, ConfirmedOwner {
         string memory _uuid,
         string memory _id
     ) public recordChainlinkFulfillment(requestId) {
-        requestHook(
-             requestId,
-            _mean,
-            _std,
-            _max,
-            _min,
-            _uuid,
-            _id
-        );
+        requestHook(requestId, _mean, _std, _max, _min, _uuid, _id);
     }
 
     /**
@@ -87,9 +79,15 @@ contract MultiWordConsumerContract is ChainlinkClient, ConfirmedOwner {
      */
     function withdrawLink() public onlyOwner {
         LinkTokenInterface link = LinkTokenInterface(chainlinkTokenAddress());
-        require(link.transfer(msg.sender, link.balanceOf(address(this))), 'Unable to transfer');
+        require(
+            link.transfer(msg.sender, link.balanceOf(address(this))),
+            "Unable to transfer"
+        );
     }
 
+    /**
+     * Callback function for handling oracle responses.
+     */
     function requestHook(
         bytes32 requestId,
         string memory _mean,
